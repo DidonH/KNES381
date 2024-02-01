@@ -1,3 +1,5 @@
 ### <div align="center"> KNES 381 Markdown Website 
 
-<img align="right" width="100" height="100" src="IMG_8609.JPG">
+<img align="right" width="200" height="200" src="IMG_8609.JPG">
+
+##### <div align="left"> This is my KNES 381 Markdown Website.
