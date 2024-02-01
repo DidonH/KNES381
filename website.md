@@ -9,8 +9,9 @@
 
 ##### <div align="left"> This is my KNES 381 Markdown Website.
 * Here, you will learn about the applications of computers in Kinesiology. 
-* We can label different categories of test results in the beep test using different colours, such as "green"
+* The beep test is a rough estimate of cardiorespiratory fitness, in VO2, which is measured in units of mL/kg/min.
 * This is a link to another cool image; 
 #### [Here is the link to my readme.md file](README.md)
 
 
+<p>This text contains <sub>subscript</sub> text.</p>
