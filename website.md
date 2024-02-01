@@ -4,4 +4,4 @@
 
 ##### <div align="left"> This is my KNES 381 Markdown Website.
 * Here, you will learn about the applications of computers in Kinesiology. 
-* We can label different categories of test results in the beep test using good <span style="color:blue">some *blue* text</span>
+* We can label different categories of test results in the beep test using Some Markdown text with <span style="color:blue">some *green* text</span>.
