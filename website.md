@@ -1,1 +1,1 @@
-### KNES 381 Markdown Website
+### <div align="center"> KNES 381 Markdown Website 
