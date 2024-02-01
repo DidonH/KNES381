@@ -14,5 +14,3 @@
 * This is a link to another cool image; 
 #### [Here is the link to my readme.md file](README.md)
 
-
-<p>This text contains <sub>subscript</sub> text.</p>
