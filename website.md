@@ -14,4 +14,3 @@
 * [This is a link to another cool image](/train/IMG_9116.JPG);
 #### [Here is the link to my readme.md file](README.md)
 
-<span style="color:blue">red writing</span>
