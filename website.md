@@ -8,14 +8,6 @@
 
 #### [Here is the link to my readme.md file](README.md)
 
-
-<!DOCTYPE html>
-<html>
-<body>
-
-<h2>The style Attribute</h2>
-<p>The style attribute is used to add styles to an element, such as color:</p>
-
 <p style="color:red;">This is a red paragraph.</p>
 
 </body>
