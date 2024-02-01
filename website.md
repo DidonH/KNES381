@@ -13,7 +13,4 @@
 * This is a link to another cool image; 
 #### [Here is the link to my readme.md file](README.md)
 
-<p style="color:red;">This is a red paragraph.</p>
 
-</body>
-</html>
