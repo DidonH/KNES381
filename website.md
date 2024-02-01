@@ -9,8 +9,8 @@
 
 ##### <div align="left"> This is my KNES 381 Markdown Website.
 * Here, you will learn about the applications of computers in Kinesiology. 
-* The beep test gives a rough estimate of cardiorespiratory fitness, in V̇O<sub>2</sub>.</p>
-* V̇O<sub>2</sub>. is measured in units of mL/kg/min.
+* The beep test gives a rough estimate of cardiorespiratory fitness, in VO<sub>2</sub>.</p>
+* VO<sub>2</sub>. is measured in units of mL/kg/min.
 * [This is a link to another cool image](/train/IMG_9116.JPG);
 #### [Here is the link to my readme.md file](README.md)
 
