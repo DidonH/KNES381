@@ -5,5 +5,5 @@
 ##### <div align="left"> This is my KNES 381 Markdown Website.
 * Here, you will learn about the applications of computers in Kinesiology. 
 * We can label different categories of test results in the beep test using different colours, such as "green"
-* body { background-color: #DBF9FC; }
+
 #### [Here is the link to my readme.md file](README.md)
