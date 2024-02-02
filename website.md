@@ -1,5 +1,5 @@
 
-###<p style="text-align: center;">KNES 381 Markdown Website</p>
+###<p style="text-align: center;">KNES 381 Markdown Website"</p>
 
 <p> <img align="right" width="300" height="200" src="IMG_8609.JPG"> </p>
 
