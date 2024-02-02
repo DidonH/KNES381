@@ -1,8 +1,6 @@
 
-###  <p style="text-align:center">
-  This line will be centered.<br />
-  And so will this line.
-</p>
+###  <p style="text-align:center"> This line will be centered.<br />And so will this line.</p>
+
 
 <p> <img align="right" width="300" height="200" src="IMG_8609.JPG"> </p>
 
