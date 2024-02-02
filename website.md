@@ -1,5 +1,5 @@
 
-###  <p source="text-align:center;">Text_content</p>
+###  <p style="text-align:center;">Text_content</p>
 
 <p> <img align="right" width="300" height="200" src="IMG_8609.JPG"> </p>
 
