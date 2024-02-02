@@ -1,5 +1,5 @@
 
-### <div style="center"> KNES 381 Website
+### <div align="center"> KNES 381 Website
 
 
 <p> <img align="right" width="300" height="200" src="IMG_8609.JPG"> </p>
