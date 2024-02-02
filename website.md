@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 
 ### <div align="center"> KNES 381 Markdown Website 
 
