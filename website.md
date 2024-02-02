@@ -1,5 +1,5 @@
 
-### <h1 style="text-align:center;">Centered Heading</h1>
+### <div style="center"> KNES 381 Website</div>
 
 
 <p> <img align="right" width="300" height="200" src="IMG_8609.JPG"> </p>
