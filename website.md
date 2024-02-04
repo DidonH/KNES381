@@ -12,5 +12,5 @@
 #### [Here is the link to my readme.md file](README.md)
 
 // html example
-<span>&#775;</span>
+<span>V&#775;</span>
 
