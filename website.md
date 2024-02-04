@@ -13,4 +13,4 @@
 >#### The word [NOTE]() is in a different colour
 #### [Here is the link to my readme.md file](README.md)
 
-<FONT COLOR="#ff0000"> </FONT>
+<FONT COLOR="#ff0000"> Red </FONT>
