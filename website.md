@@ -14,3 +14,4 @@
 
 <span>V&#775;</span>O<sub>2</sub>
 
+<span>Q&#775;</span>O<sub>2</sub>
