@@ -9,6 +9,7 @@
 * The Wingate Test will give us a more accurate measure of <span>V&#775;</span>O<sub>2</sub>.</p>
 * This Wingate Test will be performed in the KNES 373 Lab.
 * <span>V&#775;</span>O<sub>2</sub>. is measured in units of mL/kg/min.
+* <span>V&#775
 * [This is a link to another cool image](/train/IMG_9116.JPG);
 >#### The word [NOTE]() is in a different colour
 #### [Here is the link to my readme.md file](README.md)
