@@ -1,0 +1,160 @@
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:18.352382Z","iopub.execute_input":"2024-03-12T18:12:18.352829Z","iopub.status.idle":"2024-03-12T18:12:18.728420Z","shell.execute_reply.started":"2024-03-12T18:12:18.352796Z","shell.execute_reply":"2024-03-12T18:12:18.727389Z"}}
+# This Python 3 environment comes with many helpful analytics libraries installed
+# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python
+# For example, here's several helpful packages to load
+
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+
+# Input data files are available in the read-only "../input/" directory
+# For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory
+
+import os
+for dirname, _, filenames in os.walk('/kaggle/input'):
+    for filename in filenames:
+        print(os.path.join(dirname, filename))
+
+# You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using "Save & Run All" 
+# You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:20.600237Z","iopub.execute_input":"2024-03-12T18:12:20.600703Z","iopub.status.idle":"2024-03-12T18:12:20.605823Z","shell.execute_reply.started":"2024-03-12T18:12:20.600674Z","shell.execute_reply":"2024-03-12T18:12:20.604471Z"}}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:22.352384Z","iopub.execute_input":"2024-03-12T18:12:22.352797Z","iopub.status.idle":"2024-03-12T18:12:22.361096Z","shell.execute_reply.started":"2024-03-12T18:12:22.352766Z","shell.execute_reply":"2024-03-12T18:12:22.359614Z"}}
+import os
+for dirname, _, filenames in os.walk('/kaggle/input/'):
+    for filename in filenames:
+        print(os.path.join(dirname, filename))
+        
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:23.847334Z","iopub.execute_input":"2024-03-12T18:12:23.850568Z","iopub.status.idle":"2024-03-12T18:12:23.861452Z","shell.execute_reply.started":"2024-03-12T18:12:23.850500Z","shell.execute_reply":"2024-03-12T18:12:23.860019Z"}}
+df = pd.read_csv('../input/vo2-csv/subject_1432.csv', header=[0], skiprows=[1,2,3])
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:25.623306Z","iopub.execute_input":"2024-03-12T18:12:25.623692Z","iopub.status.idle":"2024-03-12T18:12:25.636265Z","shell.execute_reply.started":"2024-03-12T18:12:25.623661Z","shell.execute_reply":"2024-03-12T18:12:25.634975Z"}}
+df.info()
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:31.168128Z","iopub.execute_input":"2024-03-12T18:12:31.168540Z","iopub.status.idle":"2024-03-12T18:12:31.175319Z","shell.execute_reply.started":"2024-03-12T18:12:31.168510Z","shell.execute_reply":"2024-03-12T18:12:31.173323Z"}}
+x = df['TIME']
+y = df['VO2']
+y1 = df['VE']
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:32.911678Z","iopub.execute_input":"2024-03-12T18:12:32.912034Z","iopub.status.idle":"2024-03-12T18:12:32.917929Z","shell.execute_reply.started":"2024-03-12T18:12:32.912010Z","shell.execute_reply":"2024-03-12T18:12:32.916153Z"}}
+ymax = max(y)
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:35.047590Z","iopub.execute_input":"2024-03-12T18:12:35.047952Z","iopub.status.idle":"2024-03-12T18:12:35.053707Z","shell.execute_reply.started":"2024-03-12T18:12:35.047924Z","shell.execute_reply":"2024-03-12T18:12:35.052400Z"}}
+ymax = max(y)
+xmax = x[y.argmax()]
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:36.824024Z","iopub.execute_input":"2024-03-12T18:12:36.824421Z","iopub.status.idle":"2024-03-12T18:12:36.830272Z","shell.execute_reply.started":"2024-03-12T18:12:36.824393Z","shell.execute_reply":"2024-03-12T18:12:36.828980Z"}}
+print(ymax)
+print(xmax)
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:38.744528Z","iopub.execute_input":"2024-03-12T18:12:38.744900Z","iopub.status.idle":"2024-03-12T18:12:39.076114Z","shell.execute_reply.started":"2024-03-12T18:12:38.744871Z","shell.execute_reply":"2024-03-12T18:12:39.074689Z"}}
+fig, ax = plt.subplots(2, 1, sharex=True)
+fig.subplots_adjust(hspace=0.1)
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:42.168791Z","iopub.execute_input":"2024-03-12T18:12:42.169242Z","iopub.status.idle":"2024-03-12T18:12:42.180162Z","shell.execute_reply.started":"2024-03-12T18:12:42.169207Z","shell.execute_reply":"2024-03-12T18:12:42.178731Z"}}
+ax[0].annotate('$\dot VO_2max$ = ({}) L/,min'.format(round(ymax, 2)),
+               xy=(xmax, ymax), xytext=(xmax+.5, ymax+ 1),
+               arrowprops=dict(facecolor='red', shrink= 0.05),
+              )
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:44.075277Z","iopub.execute_input":"2024-03-12T18:12:44.075670Z","iopub.status.idle":"2024-03-12T18:12:44.089256Z","shell.execute_reply.started":"2024-03-12T18:12:44.075641Z","shell.execute_reply":"2024-03-12T18:12:44.087597Z"}}
+ax[0].plot(x, y,  label=('$\dot VO_2$'), c='r' )
+ax[0].spines[['right', 'top']].set_visible(False)
+ax[0].set(ylabel=('L/min'))
+ax[0].legend()
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:46.271471Z","iopub.execute_input":"2024-03-12T18:12:46.271853Z","iopub.status.idle":"2024-03-12T18:12:46.882703Z","shell.execute_reply.started":"2024-03-12T18:12:46.271823Z","shell.execute_reply":"2024-03-12T18:12:46.881135Z"}}
+fig.savefig("VO2-VE-3.png", dpi=300, bbox_inches = "tight")
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:48.784201Z","iopub.execute_input":"2024-03-12T18:12:48.784674Z","iopub.status.idle":"2024-03-12T18:12:49.715548Z","shell.execute_reply.started":"2024-03-12T18:12:48.784651Z","shell.execute_reply":"2024-03-12T18:12:49.714575Z"}}
+#This is my code for the first plot, where I plot the $\dot VO2_max and VE over time with a different set of data
+fig, ax = plt.subplots(2, 1, sharex=True)
+fig.subplots_adjust(hspace=0)
+ax[0].annotate('$\dot VO_2max$ =({}) L/min'.format(round(ymax, 2)),
+              xy=(xmax, ymax), xytext=(xmax+.5, ymax+ 1),
+               arrowprops=dict(facecolor='red', shrink= 0.05),
+              )
+
+ax[0].plot(x, y,  label=('$\dot VO_2$'), c='r')
+ax[0].spines[['right', 'top']].set_visible(False)
+ax[1].set(xlabel=('Time (min)'))
+
+ax[0].set(ylabel=('L/min'))
+ax[0].legend()
+
+ax[1].plot(x, y1, label=('VE'), c='b')
+ax[1].spines[['top', 'right']].set_visible(False)
+ax[1].set(ylabel=('breaths/min'))
+ax[1].legend()
+
+fig.savefig("VO2-VE-3.png", dpi=300, bbox_inches = "tight")
+fig.show()
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:55.416131Z","iopub.execute_input":"2024-03-12T18:12:55.416687Z","iopub.status.idle":"2024-03-12T18:12:55.428905Z","shell.execute_reply.started":"2024-03-12T18:12:55.416659Z","shell.execute_reply":"2024-03-12T18:12:55.427960Z"}}
+#This is the plot where I Plot FECO2 and VCO2 both over VO2.
+
+df2 = pd.read_csv('../input/vo2-csv/subject_1432.csv', header=[0], skiprows=[1,2,3])
+df2.info()
+
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:12:57.299008Z","iopub.execute_input":"2024-03-12T18:12:57.299570Z","iopub.status.idle":"2024-03-12T18:12:57.305036Z","shell.execute_reply.started":"2024-03-12T18:12:57.299536Z","shell.execute_reply":"2024-03-12T18:12:57.304080Z"}}
+#This is where I label my axis.
+
+x = df2['VO2']
+y = df2['FECO2']
+y1 = df2['VCO2']
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:13:00.687579Z","iopub.execute_input":"2024-03-12T18:13:00.687954Z","iopub.status.idle":"2024-03-12T18:13:00.692528Z","shell.execute_reply.started":"2024-03-12T18:13:00.687928Z","shell.execute_reply":"2024-03-12T18:13:00.691565Z"}}
+ymax = max(y)
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:13:02.839715Z","iopub.execute_input":"2024-03-12T18:13:02.840111Z","iopub.status.idle":"2024-03-12T18:13:02.845061Z","shell.execute_reply.started":"2024-03-12T18:13:02.840079Z","shell.execute_reply":"2024-03-12T18:13:02.843871Z"}}
+ymax = max(y)
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:13:05.184707Z","iopub.execute_input":"2024-03-12T18:13:05.185100Z","iopub.status.idle":"2024-03-12T18:13:05.193680Z","shell.execute_reply.started":"2024-03-12T18:13:05.185070Z","shell.execute_reply":"2024-03-12T18:13:05.192485Z"}}
+ymax = max(y)
+xmax = x[y.argmax()]
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:13:06.960418Z","iopub.execute_input":"2024-03-12T18:13:06.960812Z","iopub.status.idle":"2024-03-12T18:13:06.967366Z","shell.execute_reply.started":"2024-03-12T18:13:06.960781Z","shell.execute_reply":"2024-03-12T18:13:06.965467Z"}}
+print(ymax)
+print(xmax)
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:13:09.464568Z","iopub.execute_input":"2024-03-12T18:13:09.465229Z","iopub.status.idle":"2024-03-12T18:13:09.762059Z","shell.execute_reply.started":"2024-03-12T18:13:09.465197Z","shell.execute_reply":"2024-03-12T18:13:09.761129Z"}}
+#This is where I create two different plots, stacked on top of each other sharing the same x-axis.
+
+fig, ax = plt.subplots(2, 1, sharex=True)
+fig.subplots_adjust(hspace=0.1)
+
+
+# %% [code] {"execution":{"iopub.status.busy":"2024-03-12T18:13:12.800970Z","iopub.execute_input":"2024-03-12T18:13:12.802113Z","iopub.status.idle":"2024-03-12T18:13:13.658549Z","shell.execute_reply.started":"2024-03-12T18:13:12.802055Z","shell.execute_reply":"2024-03-12T18:13:13.657004Z"}}
+#This is where I populate the plots with the data. 
+#The 'o' in ax[0].plot will set it to graph as scatter plots instead of lines.
+# ax[1].axvline will create a vertical line at the Gas Exchange Thresholds.
+
+fig, ax = plt.subplots(2, 1, sharex=True)
+fig.subplots_adjust(hspace=0)
+plt.suptitle('$\dot VCO_2$ and $FECO_2$ Plotted Over $\dot VO_2$')
+
+ax[0].plot(x, y, 'o', label=('$\dot VCO_2$'), c='r' )
+ax[0].spines[['right', 'top']].set_visible(False)
+
+ax[0].set(ylabel=('L/min'))
+ax[0].legend(loc = 'upper left', fontsize = 7)
+
+ax[0].annotate('GET 1',xy=(1.32,5))
+ax[0].annotate('GET 2',xy=(3.12,5))
+
+ax[1].plot(x, y1, 'o', label=('$FECO_2$'), c='b')
+ax[1].spines[['top', 'right']].set_visible(False)
+ax[1].set(ylabel=('%'))
+ax[1].set(xlabel=('$\dot VO_2$ (L/min)'))
+ax[1].legend(loc = 'upper left', fontsize =6)
+
+ax[1].axvline (x=1.3, ymin=0, ymax = 2, c= 'g', linewidth=2, zorder=0, clip_on=False, label = 'GET1')
+ax[1].axvline (x=3.1, ymin=0, ymax = 2, c= 'g', linewidth=2, zorder=0, clip_on=False, label = 'GET2')
+
+fig.savefig("VCO2-FECO2-VO2.png", dpi=300, bbox_inches = "tight")
+fig.show()
